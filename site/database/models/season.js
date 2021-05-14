@@ -9,7 +9,10 @@ module.exports = (sequelize, DataTypes) => {
         {tableName: "season"}
     );
     Season.associate = function (models) {
-        Season.belongsTo(models.Episode, {
+        Season.belongsTo(models.Serie, {
+            as: "serie"
+        })
+        Season.hasMany(models.Episode, {
             as: "episode",
         });
     }

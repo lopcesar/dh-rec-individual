@@ -4,19 +4,17 @@ module.exports = (sequelize, DataTypes) => {
         "Serie",
         {
             title: DataTypes.STRING,
-            coverArt: DataTypes.STRING,
+            cover_art: DataTypes.STRING
         },
-        { tableName: "serie" }
+        { tableName: "serie" },
+        
+        
     );
-    Serie.associate = function (models) {
-        Serie.belongsTo(models.Season, {
+ /*    Serie.associate = function (models) {
+        Serie.hasMany(models.Season, {
             as: "season",
         });
-        /* Serie.belongsToMany(models.Actor, {
-            as: "actors",
-            through: models.ActorMovie,
-            foreignKey: "movieId",
-        }); */
-    };
+       
+    }; */
     return Serie;
 };

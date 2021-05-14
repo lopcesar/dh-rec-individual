@@ -20,6 +20,11 @@ module.exports = (sequelize, DataTypes) => {
             through: models.ActorMovie,
             foreignKey: "actorId",
         });
+        Actor.belongsToMany(models.Episode, {
+            as: "episode",
+            through: models.ActorEpisode,
+            foreignKey: "actorId",
+        });
     };
     return Actor;
 };
