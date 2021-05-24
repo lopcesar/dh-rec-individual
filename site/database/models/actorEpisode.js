@@ -1,11 +1,16 @@
-"use strict";
+'use strict';
+const {
+  Model
+} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    const ActorEpisode = sequelize.define(
-        "ActorEpisode",
-        {
-            screentime: DataTypes.INTEGER(10).UNSIGNED,
-        },
-        {tableName: "actor_episode"}
-    )
-    return ActorEpisode;
-}
+  const ActorEpisodes = sequelize.define(
+    'ActorEpisodes',
+    {
+    actorId: DataTypes.INTEGER,
+    episodeId: DataTypes.INTEGER
+  }, {
+    tableName: "actor_episode"
+   }
+  );
+  return ActorEpisodes;
+};

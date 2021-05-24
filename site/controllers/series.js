@@ -10,7 +10,7 @@ module.exports = {
     detail: async(req, res) => {
         const id = req.params.id;
         const serie = await Serie.findByPk(id/* ,{
-            include: "season",
+            include: ["season"],
         } */);
         res.render("series/detail", {serie});
     },
@@ -41,6 +41,6 @@ module.exports = {
             cover_art: req.body.cover_art
 
         });
-        res.redirect(`/series/${serie.id}`);
+        res.redirect("/");
     }
 }

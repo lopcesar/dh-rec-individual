@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
+
 const seasonsRouter = require("./seasons");
 const seriesRouter = require("./series");
 const moviesRouter = require("./movies");
