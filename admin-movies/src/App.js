@@ -19,22 +19,19 @@ class App extends Component {
       );
       
       return await response.json()
-    
-    
   }
   
   async getMoviesCount() {
-    const countResponse = await this.queryMoviesAPI("/");
-    console.log(countResponse)
-    return countResponse.index;
+    const countResponse = await this.queryMoviesAPI("/")
+       
+        console.log(countResponse);
+        return countResponse.movies;
+        
   }
   
   async updateData() {
-    const movieList = 
-     [ {
-      title:(this.getMoviesCount())
-      }]
-    
+    const movieList = await this.getMoviesCount()
+      
     this.setState({
       movieList,
     });
@@ -45,7 +42,7 @@ class App extends Component {
     setInterval(() =>{
       this.updateData();
       console.log("data updated");
-    }, 3000);
+    }, 10000);
     this.updateData();
   
   };
@@ -56,12 +53,11 @@ class App extends Component {
       <div className="App">
         <div>
           {this.state.movieList.map(
-            (elem, index) => {
+            (elem, id) => {
             return (
               <MovieList
-              key={index} 
+              key={id} 
               title={elem.title} 
-              rating={elem.rating}
               />
             
             );

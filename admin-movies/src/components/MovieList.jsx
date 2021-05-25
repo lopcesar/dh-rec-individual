@@ -4,9 +4,9 @@ export default function MovieList(porps) {
     return(
         <div>
             <div>
-                {porps.title}
+                <p>{porps.title}</p>
     
-                {porps.rating}
+                <p>{porps.rating}</p>
             </div>
 
             

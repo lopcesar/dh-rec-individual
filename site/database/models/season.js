@@ -8,15 +8,15 @@ const Season = sequelize.define(
   {
     title: DataTypes.STRING,
     rating: DataTypes.NUMBER
-  }, { }
+  }, 
   );
- /*  Season.associate = function (models) {
-    Season.belongsTo(models.Serie, {
+   Season.associate = function (models) {
+    /* Season.belongsTo(models.Serie, {
         as: "serie"
-    })
+    }) */
     Season.hasMany(models.Episode, {
         as: "episode",
     });
-} */
+} 
   return Season;
 };
