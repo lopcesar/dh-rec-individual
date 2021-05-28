@@ -5,6 +5,7 @@ module.exports = {
         return await Serie.findByPk(id);
     },
     findAll: async () => {
+        
         return await Serie.findAll();
     },
 };

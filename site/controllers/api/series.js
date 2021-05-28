@@ -3,7 +3,8 @@ const seriesService = require("../../services/seriesService");
 module.exports = {
     index: async (req, res) => {
         const series = await seriesService.findAll();
-        res.send({count: series.length, series:series});
+        return res.send({ count: series.length, series : series });
+
     },
 
     detail: async (req, res) => {

@@ -7,7 +7,8 @@ const Season = sequelize.define(
   "Season",
   {
     title: DataTypes.STRING,
-    rating: DataTypes.NUMBER
+    rating: DataTypes.NUMBER,
+    timestamp:false
   }, 
   );
    Season.associate = function (models) {

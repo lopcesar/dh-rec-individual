@@ -1,18 +1,18 @@
-'use strict';
+"use strict";
 
-module.exports = (sequelize, DataTypes) => {
-  const Serie = sequelize.define(
-    "Serie",
-    {
-    title: DataTypes.STRING,
-    cover_art: DataTypes.STRING
-  },
-  {tableName: "series"},
-  );
- /*  Serie.associate = function (models) {
+module.exports = (sequelize, dataTypes) => {
+    const Serie = sequelize.define(
+        "Serie",
+        {
+            title: dataTypes.STRING,
+            cover_art: dataTypes.STRING,
+        },
+        { tableName: "series" }
+    );
+    /*  Serie.associate = function (models) {
     Serie.belongsTo(models.Season, {
         as: "season"
     });
   } */
-  return Serie;
+    return Serie;
 };

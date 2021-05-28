@@ -1,5 +1,5 @@
 const {Serie, Season, Episode, Actor, Sequelize} = require ("../database/models")
-const Op = Sequelize.Op
+
 
 module.exports = {
     index: async(req, res) => {
@@ -30,13 +30,17 @@ module.exports = {
     },
 
     showCreate: async (req, res) => {
-        res.render("series/create-edit",{title: "Create Serie"});
+       return res.render("series/create",{title: "Create Serie"});
     },
     
-    create: async(req, res) => {
-        const serie = await Serie.create({
-            ...req.body,
+    create: function (req, res) {
+        console.log(req.body);
+        Serie.create({
+            title: req.body.title,
+            cover_art: req.body.cover_art,
+           
         });
-        res.redirect(`/series/${serie.id}`)
+
+        return res.redirect("/series");
     },
 }

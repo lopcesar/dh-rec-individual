@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head.ejs",{title}) %>
+</head>
+
+<body>
+    <h1>Crear Serie</h1>
+    <form action = "/series/create" method="POST" method="POST">
+        <div>
+            <label for="">Titulo</label>
+            <input type="text" name="title">
+        </div>
+        <button type="submit">Crear Series</button>
+    </form>
+
+</body>
+
+</html>

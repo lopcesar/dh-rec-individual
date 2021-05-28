@@ -1,6 +1,4 @@
-
-
-export default function MovieList(porps) {
+export default function Movie(porps) {
     return(
         <div>
             <div>
