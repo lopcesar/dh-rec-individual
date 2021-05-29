@@ -14,7 +14,7 @@ class MovieList extends Component {
   
     async queryMoviesAPI(endpoint) {
       const response = await fetch(
-        `http://localhost:3000/api/movies${endpoint}`
+        `http://localhost:3030/api/movies${endpoint}`
         );
         console.log(response)
         return await response.json()
@@ -51,22 +51,23 @@ class MovieList extends Component {
       return (
         <div className="MovieList">
           <div>
-            {this.state.movieList.map(
-              (elem, id) => {
-              return (
-                <Movie
-                key={id} 
-                title={elem.title} 
-                />
-              
-              );
-            }
+              {this.state.movieList.map(
+                (elem, id) => {
+                return (
+                  
+                      <Movie
+                      key={id}
+                      title={elem.title} 
+                      />
+                );
+              }
             )}
+              
           </div>
         </div>
-      );
-    }
+    );
   }
+}
   
   
   export default MovieList;

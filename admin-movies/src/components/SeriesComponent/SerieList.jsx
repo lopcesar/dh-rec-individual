@@ -14,7 +14,7 @@ class SerieList extends Component {
   
     async querySeriesAPI(endpoint) {
       const response = await fetch(
-        `http://localhost:3000/api/series${endpoint}`
+        `http://localhost:3030/api/series${endpoint}`
         );
         return await response.json();
       
